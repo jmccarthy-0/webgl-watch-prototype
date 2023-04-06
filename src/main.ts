@@ -103,7 +103,7 @@ const main = () => {
     'textures/london_studio/nz.png',
   ]);
 
-  const refreshEnvMap = (scene) => {
+  const refreshEnvMap = (scene: THREE.Scene) => {
     scene.environment = envMap;
     scene.traverse(child => {
       if (child instanceof THREE.Mesh && child.material instanceof THREE.MeshStandardMaterial) {
@@ -206,9 +206,6 @@ const main = () => {
 
  
   // Animation Loop
-  const clock = new THREE.Clock();
-  let prevTime = 0;
-
   const animate = () => {
     controls.update();
 
