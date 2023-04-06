@@ -6,6 +6,18 @@ import { gsap } from "gsap";
 
 import * as dat from 'lil-gui';
 
+// Assets
+// @ts-ignore
+import gltfUrl from '/static/model/watch01.gltf';
+import cubeMapPxUrl from '/static/textures/london_studio/px.png';
+import cubeMapNxUrl from '/static/textures/london_studio/nx.png';
+import cubeMapPyUrl from '/static/textures/london_studio/py.png';
+import cubeMapNyUrl from '/static/textures/london_studio/ny.png';
+import cubeMapPzUrl from '/static/textures/london_studio/pz.png';
+import cubeMapNzUrl from '/static/textures/london_studio/nz.png';
+
+
+
 const main = () => {
   // Global Params
   const globalParams = {
@@ -95,12 +107,12 @@ const main = () => {
 
   // Textures
   const envMap = cubeTextureLoader.load([
-    'textures/london_studio/px.png',
-    'textures/london_studio/nx.png',
-    'textures/london_studio/py.png',
-    'textures/london_studio/ny.png',
-    'textures/london_studio/pz.png',
-    'textures/london_studio/nz.png',
+    cubeMapPxUrl,
+    cubeMapNxUrl,
+    cubeMapPyUrl,
+    cubeMapNyUrl,
+    cubeMapPzUrl,
+    cubeMapNzUrl
   ]);
 
   const refreshEnvMap = (scene: THREE.Scene) => {
@@ -128,7 +140,7 @@ const main = () => {
   const watchGroup = new THREE.Group();
 
   gltfLoader.load(
-    '/model/watch01.gltf',
+    gltfUrl,
     gltf => {
       watch = gltf.scene;
       watch.scale.set(10,10,10);
