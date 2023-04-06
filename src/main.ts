@@ -7,7 +7,6 @@ import { gsap } from "gsap";
 import * as dat from 'lil-gui';
 
 // Assets
-// @ts-ignore
 import gltfUrl from '/static/model/watch01.gltf';
 import cubeMapPxUrl from '/static/textures/london_studio/px.png';
 import cubeMapNxUrl from '/static/textures/london_studio/nx.png';
